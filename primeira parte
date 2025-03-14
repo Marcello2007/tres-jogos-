@@ -1,0 +1,409 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <windows.h>
+
+int somV();
+int somD();
+
+int main() {
+    setlocale(LC_ALL, "portuguese");
+    int c = 0, b = 0;
+    char a = 0;
+    char texto[] = "No jogo 'Perguntas e Respostas', serao 5 Perguntas com \n4 alternativas cada. Nele veremos assuntos relacionados... ";
+    char perg1[] = "Qual destas substâncias faz\n parte da composição do vidro?";
+    char perg2[] = "Em que ordem surgiram os modelos atômicos?";
+    char perg3[] = "Qual a velocidade da luz?";
+    char perg4[] = "Como é a conjugação do verbo caber na\n 1.ª pessoa do singular\n do presente do indicativo?";
+    char perg5[] = "A todo instante, raios cósmicos atingem a atmosfera terrestre\n e colidem com núcleos atômicos.\n";
+    char perg5_1[] = "Dessas interações, é formada uma cascata de partículas que permeia nossa atmosfera. Muitas dessas\n";
+    char perg5_2[] = "partículas são instáveis,\n o que significa que, após determinado intervalo de tempo (tempo de vida), elas\n";
+    char perg5_3[] = "decaem. Seja um múon criado a uma altitude de 100 km\n e que se movimenta com uma velocidade vertical\n";
+    char perg5_4[] = "em direçãao ao solo de 0,9999c.\n Sabendo que seu tempo de vida, em repouso, é de 2,2 µs,\n a mínima altitude que essa partícula atinge,\n";
+    char perg5_5[] = "aproximadamente, é de:";
+              
+    do{ 
+        if (a == 0) {
+            system("cls");
+            printf(" **TíTULO\n");
+            printf("\n1 - Perguntas e Respostas\n");
+            printf("2 - Cobra na caixa!\n");
+            printf("3 - Gousmas War\n");
+            printf("\nEscolha Um Jogo: ");
+            scanf(" %c", &a);
+            if (a < '1' || a > '3') {
+                system("cls");
+                printf("\n\n** INVALIDO**\n\n");
+                Sleep(500);
+                a = 0;
+                c = 1;
+			}
+        }
+
+        if (a == '1') {
+            system("cls");
+            printf("Perguntas e Respostas\n");
+            printf("\n | 1 - PLAY   |");
+            printf("\n | 2 - REGRAS |");
+            printf("\n | 3 - Voltar |");
+            printf("\nEscolha Uma Opcão: ");
+            scanf(" %c", &a);
+
+            if (a < '1' || a > '3') {
+                system("cls");
+                printf("Invalido");
+                Sleep(500);
+                a = '1';
+                c = 1;
+            } else if (a == '1') {
+                b = 1;
+            } else if (a == '2') {
+                c = 1;
+            } else if (a == '3') {
+                a = 0;
+                c = 1;
+                Beep(500, 50);
+            }
+        }
+
+        if (b == 1) {
+            char p = 'z';
+            system("cls");
+
+            for (int q = 0; perg1[q] != '\0'; q++) {
+                putchar(perg1[q]);
+                for (int j = 0; j < 100000; j++);
+            }
+
+            printf("\n A) Areia");
+            Beep(700, 50);
+            Sleep(200);
+            printf("\n--------------------------\n");
+            printf("\n B) Petróleo\n");
+            Beep(700, 50);
+            Sleep(200);
+            printf("\n--------------------------\n");
+            printf("\n C) Celulose\n");
+            Beep(700, 50);
+            Sleep(200);
+            printf("\n--------------------------\n");
+            printf("\n D) Fibra\n");
+            Beep(700, 50);
+
+            printf("\n\nEscolha a Alternativa: ");
+            scanf(" %c", &p);
+            Sleep(350);
+
+            if ((p == 'b' || p == 'B') || (p == 'c' || p == 'C') || (p == 'd' || p == 'D')) {
+                system ("color 4F");
+				system("cls");
+                printf("\n X Alternativa Errada X\n");
+                somD();
+                printf("\n 1 - Continuar \n");
+                printf("2 - Voltar Menu \n");
+                scanf(" %c", &a);
+                system ("color 07");
+            } else if (p == 'a' || p == 'A') {
+                system("color AF");
+				system("cls");
+                printf("\n CORRETO \n");
+                somV();
+                printf("\n 1- Continuar \n");
+                scanf(" %c", &a);
+                 system ("color 07");
+            }
+
+            if (a == '1') {
+                a = '0';  // Resetar escolha
+                b = 2;
+            }
+            if (a == '2') {
+                a = '0';  // Resetar escolha
+                c = 2;
+            }
+        }
+
+        if (b == 2) {
+            char p = 'z';
+            system("cls");
+
+            for (int q = 0; perg2[q] != '\0'; q++) {
+                putchar(perg2[q]);
+                for (int j = 0; j < 100000; j++);
+            }
+
+            printf("\n A) Thomson, Dalton, Rutherford, Rutherford-Bohr \n");
+            Beep(700, 50);
+            Sleep(200);
+            printf("\n B) Rutherford-Bohr, Rutherford, Thomson, Dalton\n");
+            Beep(700, 50);
+            Sleep(200);
+            printf("\n C) Dalton, Rutherford-Bohr, Thomson, Rutherford\n");
+            Beep(700, 50);
+            Sleep(200);
+            printf("\n D) Dalton, Thomson, Rutherford, Rutherford-Bohr\n");
+
+            printf("\n\nEscolha a alternativa: ");
+            scanf(" %c", &p);
+            Sleep(350);
+
+            if ((p == 'a' || p == 'A') || (p == 'b' || p == 'B') || (p == 'c' || p == 'C')) {
+                system ("color 4F");
+				system("cls");
+                printf("\n X Alternativa Errada X\n");
+                somD();
+                printf("\n 1 - Continuar \n");
+                printf("2 - Voltar Menu \n");
+                scanf(" %c", &a);
+                 system ("color 07");
+                
+            } else if (p == 'd' || p == 'D') {
+                system("color AF");
+			    system("cls");
+                printf("\n CORRETO \n");
+                somV();
+                printf("\n 1- Continuar \n");
+                scanf(" %c", &a);
+                 system ("color 07");
+            }
+
+            if (a == '1') {
+                a = '0';  // Resetar escolha
+                b = 3;
+            }
+            if (a == '2') {
+                a = '0';  // Resetar escolha
+                c = 2;
+            }
+        }
+
+        if (b == 3) {
+            char p = 'z';
+            system("cls");
+
+            for (int q = 0; perg3[q] != '\0'; q++) {
+                putchar(perg3[q]);
+                for (int j = 0; j < 100000; j++);
+            }
+            printf("\n A) 299 792 458 metros por segundo (m/s)\n");
+            Beep(700, 50);
+            Sleep(200);
+            printf("\n B) 199 792 458 metros por segundo (m/s)\n");
+            Beep(700, 50);
+            Sleep(200);
+            printf("\n C) 150 000 000 metros por segundo (m/s)\n");
+            Beep(700, 50);
+            Sleep(200);
+            printf("\n D) 300 000 000 metros por segundo (m/s)\n");
+
+            printf("\n\nEscolha a alternativa: ");
+            scanf(" %c", &p);
+            Sleep(350);
+            if ((p == 'b' || p == 'B') || (p == 'c' || p == 'C') || (p == 'd' || p == 'D')) {
+                system ("color 4F"); 
+				system("cls");
+                printf("\n X Alternativa Errada X\n");
+                somD();
+                printf("\n 1 - Continuar \n");
+                printf("2 - Voltar Menu \n");
+                scanf(" %c", &a);
+                system ("color 07");
+                
+            } else if (p == 'a' || p == 'A') {
+                system("color AF");
+				system("cls");
+                printf("\n CORRETO \n");
+                somV();
+                printf("\n 1- Continuar \n");
+                scanf(" %c", &a);
+                system ("color 07");
+            }
+
+            if (a == '1') {
+                a = '0';  // Resetar escolha
+                b = 4;
+            }
+            if (a == '2') {
+                a = '0';  // Resetar escolha
+                c = 2;
+            }
+        }
+
+        if (b == 4) {
+            char p = 'z';
+            system("cls");
+
+            for (int q = 0; perg4[q] != '\0'; q++) {
+                putchar(perg4[q]);
+                for (int j = 0; j < 100000; j++);
+            }
+            printf("\n A) Ele cabe\n");
+            Beep(700, 50);
+            Sleep(200);
+            printf("\n B) Eu caibo\n");
+            Beep(700, 50);
+            Sleep(200);
+            printf("\n C) Que eu caiba \n");
+            Beep(700, 50);
+            Sleep(200);
+            printf("\n D) Eu cabo \n");
+
+            printf("\n\nEscolha a alternativa: ");
+            scanf(" %c", &p);
+            Sleep(350);
+
+            if ((p == 'a' || p == 'A') || (p == 'c' || p == 'C') || (p == 'd' || p == 'D')) {
+                system ("color 4F");
+			    system("cls");
+                printf("\n X Alternativa Errada X\n");
+                somD();
+                printf("\n 1 - Continuar \n");
+                printf("2 - Voltar Menu \n");
+                scanf(" %c", &a);
+                system ("color 07");
+                
+            } else if (p == 'b' || p == 'B') {
+                system("color AF");
+				system("cls");
+                printf("\n CORRETO \n");
+                somV();
+                printf("\n 1- Continuar \n");
+                scanf(" %c", &a);
+                system ("color 07");
+            }
+
+            if (a == '1') {
+                a = '0';  // Resetar escolha
+                b = 5;
+            }
+            if (a == '2') {
+                a = '0';  // Resetar escolha
+                c = 2;
+            }
+        }
+
+        if (b == 5) {
+            char p = 'z';
+            system("cls");
+
+            for (int q = 0; perg5[q] != '\0'; q++) {
+                putchar(perg5[q]);
+                for (int j = 0; j < 100000; j++);
+            }
+            for (int q = 0; perg5_1[q] != '\0'; q++) {
+                putchar(perg5_1[q]);
+                for (int j = 0; j < 100000; j++);
+            }
+            for (int q = 0; perg5_2[q] != '\0'; q++) {
+                putchar(perg5_2[q]);
+                for (int j = 0; j < 100000; j++);
+            }
+            for (int q = 0; perg5_3[q] != '\0'; q++) {
+                putchar(perg5_3[q]);
+                for (int j = 0; j < 100000; j++);
+            }
+            for (int q = 0; perg5_4[q] != '\0'; q++) {
+                putchar(perg5_4[q]);
+                for (int j = 0; j < 100000; j++);
+            }
+	        for (int q = 0; perg5_5[q] != '\0'; q++) {
+                putchar(perg5_5[q]);
+                for (int j = 0; j < 100000; j++);
+            }
+            printf("\n A) 46 KM \n");
+            Beep(700, 50);
+            Sleep(200);
+            printf("\n B) 99 KM \n");
+            Beep(700, 50);
+            Sleep(200);
+            printf("\n C) 53 KM  \n");
+            Beep(700, 50);
+            Sleep(200);
+            printf("\n D) 0 KM \n");
+
+            printf("\n\nEscolha a alternativa: ");
+            scanf(" %c", &p);
+            Sleep(350);
+
+            if ((p == 'a' || p == 'A') || (p == 'b' || p == 'B') || (p == 'd' || p == 'D')) {
+                system ("color 4F");
+			    system("cls");
+                printf("\n X Alternativa Errada X\n");
+                somD();
+                printf("\n\n |    1 - Voltar     |\n");
+                printf(" | 2 - Menu Principal| \n");
+                printf("\n Escolha Uma Opcão: ");
+                scanf(" %c", &a);
+                system ("color 07");
+                
+            } else if (p == 'c' || p == 'C') {
+                system("color AF");
+			    system("cls");
+                printf("\n CORRETO \n");
+                somV();
+                printf("\n\n |    1 - Voltar     |\n");
+                printf(" | 2 - Menu Principal| \n");
+                printf("\n Escolha Uma Opcão: ");
+                scanf(" %c", &a);
+                system ("color 07"); 
+            }
+            if (a < '1' || a > '2') {
+                system("cls");
+                printf("Invalido");
+                Sleep(500);
+                a = '2';
+                c = 1;
+            } else if (a == '1') {
+                a = '1';
+            } else if (a == '2') {
+                a = '0';  // Resetar escolha
+                c = 1;
+            }
+         if (a == '2') {
+            system("cls");
+            printf("\n REGRAS \n\n");
+            for (int i = 0; texto[i] != '\0'; i++) {
+                Beep(400, 10);
+                putchar(texto[i]);
+                for (int j = 0; j < 5000000; j++);
+            }
+
+            printf("\n\n |    1 - Voltar     |\n");
+            printf(" | 2 - Menu Principal| \n");
+
+            printf("\n Escolha Uma Opcão: ");
+            scanf(" %c", &a);
+
+            if (a < '1' || a > '2') {
+                system("cls");
+                printf("Invalido");
+                Sleep(500);
+                a = '2';
+                c = 1;
+            } else if (a == '1') {
+                a = '1';
+            } else if (a == '2') {
+                a = '0';  // Resetar escolha
+                c = 1;
+            }
+        }}
+
+       
+    } while (c >= 1 && c <= 2);
+
+    return 0;
+}
+
+int somV() {
+    Beep(1200, 50);
+    Beep(1000, 50);
+    Beep(1200, 50);
+    Beep(1000, 50);
+    Beep(1200, 300);
+}
+
+int somD() {
+    Beep(300, 450);
+    Beep(200, 450);
+    Beep(150, 1000);
+}
