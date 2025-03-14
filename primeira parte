@@ -25,7 +25,7 @@ int main() {
     do{ 
         if (a == 0) {
             system("cls");
-            printf(" **TíTULO\n");
+            printf(" !!!JOGOS LEGAIS!!!\n");
             printf("\n1 - Perguntas e Respostas\n");
             printf("2 - Cobra na caixa!\n");
             printf("3 - Gousmas War\n");
